@@ -117,27 +117,30 @@ namespace WhileSchleife
 
         static void Return_VerlaesstAuchDieSchleife()
         {
-            // Schlüsselwort: return
+            Console.WriteLine("Schlüsselwort: return");
 
             // Wenn du return im Rumpf einer while-Schleife verwendest, wird nicht nur die Methode
             // verlassen, in der deine while-Schleife ist, sondern ebenfalls die Schleife.
             // Dabei wird der Schleifenrumpf sofort verlassen. Es wird also nicht nochmals die
             // Bedingung überprüft oder noch weitere Befehle im Schleifenrumpf ausgeführt.
 
-            Console.WriteLine("Return: while-Schleife wird gestartet!");
-
-            int zaehler = 0;
-            while (true)
+            string befehl = "start";
+            while (befehl.ToUpper() != "BEENDEN")
             {
-                if (zaehler > 3)
+                Console.Write("Gib beliebige Befehle ein: ");
+                befehl = Console.ReadLine();
+
+                if (befehl.ToUpper() == "RETURN")
                 {
                     Console.WriteLine("Methode und Schleife werden jetzt sofort verlassen. Bedingung ist immer noch TRUE!");
                     return;
                 }
 
-                zaehler = zaehler + 1;
-                Console.WriteLine("Schleifenrumpf wird ausgeführt. Zaehler hat den Wert: {0}", zaehler);
+                Console.WriteLine("Du hast mir folgenden Befehl gegeben: {0}", befehl);
+                Console.WriteLine("Mit RETURN kannst du die Schleife abbrechen!");
+                Console.WriteLine("Mit BEENDEN kannst du die Schleife normal beenden!");
             }
+            Console.WriteLine("Du hast die Schleife normal beendet!");
 
             // HINWEIS: Auch die Verwendung von RETURN kann verwirrend sein, weil man es im Quell-
             // code schnell mal überlesen kann. Überlege lieber, ob du deine Schleife nicht so 
