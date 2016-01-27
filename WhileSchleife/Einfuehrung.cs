@@ -87,15 +87,13 @@ namespace WhileSchleife
 
         static void Break_SchleifeVorzeitigVerlassen()
         {
-            // Schlüsselwort: break
+            Console.WriteLine("Schlüsselwort: break");
 
             // Die Hauptschleife eines Programmes wird manchmal als Endlosschleife realisiert.
             // Also beispielsweise mit while(true). Um nun das Programm trotzdem zu beenden,
             // oder wenn du dich das Ergebnis nicht mehr interessiert, kannst du break verwenden.
             // Damit wird der Schleifenrumpf sofort verlassen und die Bedingung nicht noch ein
             // weiteres mal überprüft.
-
-            Console.WriteLine("Break: while-Schleife wird gestartet!");
 
             int zaehler = 0;
             while (true)
