@@ -41,6 +41,11 @@ namespace WhileSchleife
                 // Alles zwischen diesen Klammern wird solange wiederholt, bis die Bedingung nicht
                 // mehr erfüllt ist. Dabei wird die Bedingung VOR jeder Ausführung des 
                 // Schleifenrumpfs abgefragt.
+
+                // Hier können weitere Schlüsselworte verwendet werden:
+                // return - Schleife (und Methode) sofort verlassen
+                // break - Schleife sofort verlassen. Es wird nach dem Schleifenrumpf weiter gemacht.
+                // continue - Iteration beenden. Als nächstes wird die Bedingung überprüft.
             }
 
             // ITERATION: Das einmalige Ausführen des Schleifenrumpfes wird als Iteration bezeichnet.
