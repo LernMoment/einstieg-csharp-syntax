@@ -7,7 +7,11 @@ namespace WhileSchleife
         static void Main(string[] args)
         {
             SchleifeWirdEinmalAusgefuehrt();
+            TrennerAusgeben();
             SchleifenrumpfWirdNichtAusgefuehrt();
+            TrennerAusgeben();
+            Break_SchleifeVorzeitigVerlassen();
+            TrennerAusgeben();
 
             Console.WriteLine("Zum beenden bitte RETURN drücken!");
             Console.ReadLine();
@@ -31,6 +35,11 @@ namespace WhileSchleife
                 // mehr erfüllt ist. Dabei wird die Bedingung VOR jeder Ausführung des 
                 // Schleifenrumpfs abgefragt.
             }
+
+            // ENDLOS-SCHLEIFE: wenn du diese Methode ausführen würdest, würde das Program nie
+            // beendet werden. Du könntest es nur noch im Debugger oder über den TaskManager beenden!
+            // Das liegt daran, dass die Bedingung immer TRUE ist, weil dort die entsprechende
+            // Konstante verwendet wurde.
         }
 
         static void SchleifeWirdEinmalAusgefuehrt()
@@ -43,7 +52,7 @@ namespace WhileSchleife
                 Console.WriteLine("Die Bedingung wurde jetzt bereits einmal überprüft und hat TRUE ergeben.");
 
                 beenden = true;
-                // Der Schleifenkopf wird noch ein weiteresmal überprüft, aber der Schleifenrumpf
+                // Der Schleifenkopf wird noch ein weiteres mal überprüft, aber der Schleifenrumpf
                 // nicht nochmals ausgeführt, weil die Bedingung nun FALSE ergibt.
             }
             Console.WriteLine("while-Schleife wurde verlassen!");
@@ -61,6 +70,43 @@ namespace WhileSchleife
                 Console.WriteLine("Dieser Text wird nie ausgegeben!");
             }
             Console.WriteLine("while-Schleife wurde verlassen!");
+        }
+
+        static void Break_SchleifeVorzeitigVerlassen()
+        {
+            // Schlüsselwort: break
+
+            // Die Hauptschleife eines Programmes wird manchmal als Endlosschleife realisiert.
+            // Also beispielsweise mit while(true). Um nun das Programm trotzdem zu beenden,
+            // oder wenn du dich das Ergebnis nicht mehr interessiert, kannst du break verwenden.
+            // Damit wird der Schleifenrumpf sofort verlassen und die Bedingung nicht noch ein
+            // weiteres mal überprüft.
+
+            Console.WriteLine("Break: while-Schleife wird gestartet!");
+
+            int zaehler = 0;
+            while (true)
+            {
+                if (zaehler > 5)
+                {
+                    break;
+                }
+
+                zaehler = zaehler + 1;
+                Console.WriteLine("Schleifenrumpf wird ausgeführt. Zaehler hat den Wert: {0}", zaehler);
+            }
+            Console.WriteLine("Schleife wurde abgebrochen, obwohl die Bedingung immer noch TRUE ist!");
+
+            // HINWEIS: Die Verwendung von BREAK ist häufig sehr verwirrend. Daher solltest du dir
+            // gut überlegen, ob du dies Schlüsselwort wirklich verwenden willst/musst. Es ist häufig
+            // ein Zeichen, dass die Schleife falsch eingesetzt wird!
+        }
+
+        static void TrennerAusgeben()
+        {
+            Console.WriteLine();
+            Console.WriteLine("----------------------------");
+            Console.WriteLine();
         }
     }
 }
