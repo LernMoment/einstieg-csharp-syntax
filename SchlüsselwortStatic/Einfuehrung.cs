@@ -40,6 +40,16 @@ namespace SchlüsselwortStatic
 
         static void Main(string[] args)
         {
+            // ein static Attribut verändert sich für alle Objekte einer Klasse:
+            KraftwagenMitGleicherAnzahlRaedern lkw = new KraftwagenMitGleicherAnzahlRaedern("40 Tonner");
+            KraftwagenMitGleicherAnzahlRaedern smart = new KraftwagenMitGleicherAnzahlRaedern("Smart");
+            smart.GibSteckbriefAus();
+            // ein 40 Tonner sollte doch mehr als 4 Räder haben, oder?
+            lkw.GibSteckbriefAus();
+            lkw.SetzeAnzahlRaeder(16);
+            lkw.GibSteckbriefAus();
+            // hast du schon einen Smart mit 16 Rädern gesehen?
+            smart.GibSteckbriefAus();
         }
 
     }
