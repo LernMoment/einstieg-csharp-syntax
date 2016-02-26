@@ -20,6 +20,10 @@ namespace WhileSchleife
             Return_VerlaesstAuchDieSchleife();
             TrennerAusgeben();
 
+            Console.WriteLine("BEISPIELE");
+            Echo.Ausfuehren();
+            TrennerAusgeben();
+
             Console.WriteLine("Zum beenden bitte RETURN drücken!");
             Console.ReadLine();
         }
@@ -96,7 +100,7 @@ namespace WhileSchleife
 
             // Die Hauptschleife eines Programmes wird manchmal als Endlosschleife realisiert.
             // Also beispielsweise mit while(true). Um nun das Programm trotzdem zu beenden,
-            // oder wenn du dich das Ergebnis nicht mehr interessiert, kannst du break verwenden.
+            // oder wenn dich das Ergebnis nicht mehr interessiert, kannst du BREAK verwenden.
             // Damit wird der Schleifenrumpf sofort verlassen und die Bedingung nicht noch ein
             // weiteres mal überprüft.
 
@@ -122,7 +126,7 @@ namespace WhileSchleife
         {
             Console.WriteLine("Schlüsselwort: return");
 
-            // Wenn du return im Rumpf einer while-Schleife verwendest, wird nicht nur die Methode
+            // Wenn du RETURN im Rumpf einer while-Schleife verwendest, wird nicht nur die Methode
             // verlassen, in der deine while-Schleife ist, sondern ebenfalls die Schleife.
             // Dabei wird der Schleifenrumpf sofort verlassen. Es wird also nicht nochmals die
             // Bedingung überprüft oder noch weitere Befehle im Schleifenrumpf ausgeführt.
