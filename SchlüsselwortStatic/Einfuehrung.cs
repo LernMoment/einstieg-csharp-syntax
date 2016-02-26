@@ -1,4 +1,5 @@
 ﻿using System;
+using SchlüsselwortStatic.StatischeAttribute;
 
 namespace SchlüsselwortStatic
 {
@@ -40,6 +41,23 @@ namespace SchlüsselwortStatic
 
         static void Main(string[] args)
         {
+            Console.WriteLine("BEISPIELE für statische Attribute:");
+            Console.WriteLine();
+
+            Console.WriteLine("Kraftwagen mit statischer Anzahl an Rädern:");
+            ZeigeKraftwagenMitGleicherAnzahlBeispiel();
+            TrennerAusgeben();
+
+            Console.WriteLine("Instanzzähler - Beispiel für statische Attribute:");
+            ZeigeInstanzZaehlerBeispiel();
+            TrennerAusgeben();
+
+            Console.WriteLine("Zum beenden bitte RETURN drücken!");
+            Console.ReadLine();
+        }
+
+        private static void ZeigeKraftwagenMitGleicherAnzahlBeispiel()
+        {
             // ein static Attribut verändert sich für alle Objekte einer Klasse:
             KraftwagenMitGleicherAnzahlRaedern lkw = new KraftwagenMitGleicherAnzahlRaedern("40 Tonner");
             KraftwagenMitGleicherAnzahlRaedern smart = new KraftwagenMitGleicherAnzahlRaedern("Smart");
@@ -50,9 +68,29 @@ namespace SchlüsselwortStatic
             lkw.GibSteckbriefAus();
             // hast du schon einen Smart mit 16 Rädern gesehen?
             smart.GibSteckbriefAus();
+        }
 
-            Console.WriteLine("Zum beenden bitte RETURN drücken!");
-            Console.ReadLine();
+        static void ZeigeInstanzZaehlerBeispiel()
+        {
+            // Am besten verstehst du was passiert, wenn du Schritt für Schritt durch den folgenden
+            // Quellcode gehst und die anschaust, wie sich die Werte der Variablen verändern.
+            Console.WriteLine("Zählen von Instanzen");
+
+            string ersterName = "eins";
+            InstanzZaehler eins = new InstanzZaehler(ersterName);
+            eins.GibSteckbriefAus();
+
+            string zweiterName = "zwei";
+            InstanzZaehler zwei = new InstanzZaehler(zweiterName);
+            // BEACHTE: hier wird wieder die Anzahl der Instanz von Objekt eins abgefragt!
+            eins.GibSteckbriefAus();
+        }
+
+        static void TrennerAusgeben()
+        {
+            Console.WriteLine();
+            Console.WriteLine("----------------------------");
+            Console.WriteLine();
         }
 
     }
