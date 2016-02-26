@@ -20,10 +20,6 @@ namespace WhileSchleife
             Return_VerlaesstAuchDieSchleife();
             TrennerAusgeben();
 
-            Console.WriteLine("BEISPIELE");
-            Echo.Ausfuehren();
-            TrennerAusgeben();
-
             Console.WriteLine("Zum beenden bitte RETURN drücken!");
             Console.ReadLine();
         }
