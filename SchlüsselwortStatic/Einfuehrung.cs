@@ -50,6 +50,9 @@ namespace SchlüsselwortStatic
             lkw.GibSteckbriefAus();
             // hast du schon einen Smart mit 16 Rädern gesehen?
             smart.GibSteckbriefAus();
+
+            Console.WriteLine("Zum beenden bitte RETURN drücken!");
+            Console.ReadLine();
         }
 
     }
