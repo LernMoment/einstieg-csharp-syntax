@@ -1,5 +1,6 @@
 ﻿using System;
 using SchlüsselwortStatic.StatischeAttribute;
+using SchlüsselwortStatic.StatischeKlassen;
 
 namespace SchlüsselwortStatic
 {
@@ -45,18 +46,29 @@ namespace SchlüsselwortStatic
             Console.WriteLine();
 
             Console.WriteLine("Kraftwagen mit statischer Anzahl an Rädern:");
-            ZeigeKraftwagenMitGleicherAnzahlBeispiel();
+            StatischesAttribut_KraftwagenMitGleicherAnzahlRaedern();
             TrennerAusgeben();
 
             Console.WriteLine("Instanzzähler - Beispiel für statische Attribute:");
-            ZeigeInstanzZaehlerBeispiel();
+            StatischesAttribute_InstanzZaehlerBeispiel();
             TrennerAusgeben();
 
             Console.WriteLine("Zum beenden bitte RETURN drücken!");
             Console.ReadLine();
         }
 
-        private static void ZeigeKraftwagenMitGleicherAnzahlBeispiel()
+        private static void StatischeKlasse_StatischerRechner()
+        {
+            int ersteZahl = 10;
+            int zweiteZahl = 15;
+            int resultat = 0;
+
+            resultat = StatischerRechner.Addieren(ersteZahl, zweiteZahl);
+
+            Console.WriteLine("");
+        }
+
+        private static void StatischesAttribut_KraftwagenMitGleicherAnzahlRaedern()
         {
             // ein static Attribut verändert sich für alle Objekte einer Klasse:
             KraftwagenMitGleicherAnzahlRaedern lkw = new KraftwagenMitGleicherAnzahlRaedern("40 Tonner");
@@ -70,7 +82,7 @@ namespace SchlüsselwortStatic
             smart.GibSteckbriefAus();
         }
 
-        static void ZeigeInstanzZaehlerBeispiel()
+        static void StatischesAttribute_InstanzZaehlerBeispiel()
         {
             // Am besten verstehst du was passiert, wenn du Schritt für Schritt durch den folgenden
             // Quellcode gehst und die anschaust, wie sich die Werte der Variablen verändern.
