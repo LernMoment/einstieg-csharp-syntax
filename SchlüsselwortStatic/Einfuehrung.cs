@@ -1,9 +1,13 @@
 ﻿using System;
 using SchlüsselwortStatic.StatischeAttribute;
-using SchlüsselwortStatic.StatischeKlassen;
+using SchlüsselwortStatic.StatischeMethode;
 
 namespace SchlüsselwortStatic
 {
+    /// <summary>
+    /// Zeigt anhand von konkreten Beispielen wie das Schlüsselwort static verwendet werden kann.
+    /// Die wichtigsten Informationen sind als Kommentare im Quellcode enthalten.
+    /// </summary>
     class Einfuehrung
     {
         // Das Schlüsselwort static wir hauptsächlich auf Klassen, Methoden und Attributen
@@ -32,6 +36,13 @@ namespace SchlüsselwortStatic
         //         |    |        |
         private static int fuerAlleObjekteGleich; // Das ganze wird auch als Klassenattribut bezeichnet!
 
+        // STATIC METHOD: Ist eine Methode in einer Klasse als static deklariert, kann diese Methode
+        // nur auf Klassenvariablen und weitere Klassenmethoden zugreifen. Solche ein Methode kann
+        // also keine Instanzvariablen verändern.
+        // Diese Methoden eignen sich besonders um Objekte einer Klasse anzulegen (z.B. Factorymethode)
+        // oder Hilfsmethoden (z.B. Konvertierungsfunktionen) bereitzustellen. Die Klasse Math besteht
+        // beispielsweise nur aus statischen Methoden.
+        // Eine static Methode wird auch als Klassenmethode bezeichnet.
         //         Schlüsselwort: static - bei Methoden immer vor dem Datentyp des Rückgabewertes!!!
         //         |    Datentyp des Rückgabewertes
         //         |    |        MethodenName
@@ -40,6 +51,10 @@ namespace SchlüsselwortStatic
         {
             // In einer Methode die static deklariert ist, kann bzw. darf nicht auf Attribute bzw.
             // Methoden der Instanz zugegriffen werden.
+
+            // Es ist also nicht möglich folgende Zeile zu schreiben. Probier es aus und entferne die
+            // Kommentarzeichen an der nächsten Zeile
+            // fuerJedesObjektUnterschiedlich = "Geht hier einfach nicht!";
         }
 
         static void Main(string[] args)
@@ -55,19 +70,19 @@ namespace SchlüsselwortStatic
             StatischesAttribute_InstanzZaehlerBeispiel();
             TrennerAusgeben();
 
-            Console.WriteLine("Statischer Rechner - Beispiel für statische Klassen:");
-            StatischeKlasse_StatischerRechner();
+            Console.WriteLine("Statischer Rechner - Beispiel für statische Methode:");
+            StatischeMethode_StatischerRechner();
             TrennerAusgeben();
 
-            Console.WriteLine("Statischer Rechner - Beispiel für nicht statische Klassen:");
-            StatischeKlasse_EinfacherNichtStatischerRechner();
+            Console.WriteLine("Statischer Rechner - Beispiel für nicht statische Methode:");
+            StatischeMethode_EinfacherNichtStatischerRechner();
             TrennerAusgeben();
 
             Console.WriteLine("Zum beenden bitte RETURN drücken!");
             Console.ReadLine();
         }
 
-        private static void StatischeKlasse_EinfacherNichtStatischerRechner()
+        private static void StatischeMethode_EinfacherNichtStatischerRechner()
         {
             // anlegen der benötigten Variablen und Initialisierung
             int ersteZahl = 10;
@@ -87,13 +102,14 @@ namespace SchlüsselwortStatic
             Console.WriteLine("Das Objekt weitererRechner hat die Berechnung {0} ausgeführt", weitererRechner.LetzteBerechnung);
         }
 
-        private static void StatischeKlasse_StatischerRechner()
+        private static void StatischeMethode_StatischerRechner()
         {
             int ersteZahl = 10;
             int zweiteZahl = 15;
             int resultat = 0;
 
-            resultat = StatischerRechner.Addieren(ersteZahl, zweiteZahl);
+            // verwendet die statische Methode an der Klasse Rechner.
+            resultat = Rechner.Addieren(ersteZahl, zweiteZahl);
 
             Console.WriteLine("Das Resultat der statsischen Berechnung von {0} + {1} ist {2}", ersteZahl, zweiteZahl, resultat);
         }

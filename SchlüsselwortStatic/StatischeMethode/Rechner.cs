@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SchlüsselwortStatic.StatischeKlassen
+namespace SchlüsselwortStatic.StatischeMethode
 {
     public class Rechner
     {
@@ -25,11 +25,23 @@ namespace SchlüsselwortStatic.StatischeKlassen
             Resultat = ausgangsWert;
         }
 
+        public static int Addieren(int ersterSummand, int zweiterSummand)
+        {
+            // eine statische Methode kann NICHT auf die Instanz zugreifen. Daher kannst du
+            // in dieser Methode auch NICHT die Eigenschaft Resultat, oder die Methode
+            // Addiere(int summand) verwenden!
+            // Eine solche statische Methode empfiehlt sich für Hilfsmethoden oder beispielsweise
+            // um Objekte einer Klasse zu erzeugen.
+            return ersterSummand + zweiterSummand;
+        }
+
         public int Addiere(int summand)
         {
             int letztesResultat = Resultat;
 
             // eigentliche Berechnung ausführen
+            // HINWEIS: Für die folgende Berechnung könnten wir auch die statische Methode Addiere
+            // verwenden und ihr Resultat und summand übergeben: Resultat = Addiere(Resultat + summand);
             Resultat = Resultat + summand;
 
             // internen Zustand der Klasse konsistent halten

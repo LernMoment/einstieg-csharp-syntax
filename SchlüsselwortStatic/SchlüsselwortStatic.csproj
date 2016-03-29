@@ -48,8 +48,7 @@
     <Compile Include="Einfuehrung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatischeKlasse.cs" />
-    <Compile Include="StatischeKlassen\Rechner.cs" />
-    <Compile Include="StatischeKlassen\StatischerRechner.cs" />
+    <Compile Include="StatischeMethode\Rechner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
