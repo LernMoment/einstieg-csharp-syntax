@@ -15,6 +15,7 @@ namespace SchlüsselwortStatic
         // ist, wird pro Instanz einmal im Speicher angelegt. Dadurch ist dieses Attribut in jeder
         // Instanz autark. Solch ein Attribut kann in jeder Instanz einer Klasse einen 
         // unterschiedlichen Wert haben.
+        // Daher wird bei einem non-static Attribute auch von einer Instanzvariablen gesprochen.
         private string fuerJedesObjektUnterschiedlich;
 
         // STATIC ATTRIBUTE: Ist ein Attribute in einer Klasse als static deklariert, wird es nur
@@ -23,6 +24,7 @@ namespace SchlüsselwortStatic
         // Dabei kann das Attribut von jeder Instanz verwendet und üblicherweise auch verändert
         // werden. Daher eignet es sich beispielsweise um einen Zähler für die Anzahl der bereits
         // angelegten Objekte (Instanzen) einer Klasse zuführen.
+        // Dementsprechend wird ein Attribut, welches static definiert ist auch Klassenvariable genannt.
         // Aufbau:
         //         Schlüsselwort: static - bei Attributen immer vor dem Datentyp!!!
         //         |    Datentyp
@@ -53,8 +55,36 @@ namespace SchlüsselwortStatic
             StatischesAttribute_InstanzZaehlerBeispiel();
             TrennerAusgeben();
 
+            Console.WriteLine("Statischer Rechner - Beispiel für statische Klassen:");
+            StatischeKlasse_StatischerRechner();
+            TrennerAusgeben();
+
+            Console.WriteLine("Statischer Rechner - Beispiel für nicht statische Klassen:");
+            StatischeKlasse_EinfacherNichtStatischerRechner();
+            TrennerAusgeben();
+
             Console.WriteLine("Zum beenden bitte RETURN drücken!");
             Console.ReadLine();
+        }
+
+        private static void StatischeKlasse_EinfacherNichtStatischerRechner()
+        {
+            // anlegen der benötigten Variablen und Initialisierung
+            int ersteZahl = 10;
+            int zweiteZahl = 15;
+
+            // Die eigentliche Berechnung jetzt in der objektorientierten Art
+            Rechner rechner = new Rechner(ersteZahl);
+            rechner.Addiere(zweiteZahl);
+
+            // Im Gegensatz zum statischen Rechner können wir von dem objektorientierten
+            // einfach eine weitere Instanz bzw. ein Objekt anlegen. Mit diesem kannst du
+            // komplett unabhängig von der ersten Berechnung arbeiten.
+            Rechner weitererRechner = new Rechner(20);
+            weitererRechner.Addiere(22);
+
+            Console.WriteLine("Das Objekt rechner hat die Berechnung {0} ausgeführt", rechner.LetzteBerechnung);
+            Console.WriteLine("Das Objekt weitererRechner hat die Berechnung {0} ausgeführt", weitererRechner.LetzteBerechnung);
         }
 
         private static void StatischeKlasse_StatischerRechner()
@@ -65,7 +95,7 @@ namespace SchlüsselwortStatic
 
             resultat = StatischerRechner.Addieren(ersteZahl, zweiteZahl);
 
-            Console.WriteLine("");
+            Console.WriteLine("Das Resultat der statsischen Berechnung von {0} + {1} ist {2}", ersteZahl, zweiteZahl, resultat);
         }
 
         private static void StatischesAttribut_KraftwagenMitGleicherAnzahlRaedern()
@@ -85,7 +115,7 @@ namespace SchlüsselwortStatic
         static void StatischesAttribute_InstanzZaehlerBeispiel()
         {
             // Am besten verstehst du was passiert, wenn du Schritt für Schritt durch den folgenden
-            // Quellcode gehst und die anschaust, wie sich die Werte der Variablen verändern.
+            // Quellcode gehst und dir anschaust, wie sich die Werte der Variablen verändern.
             Console.WriteLine("Zählen von Instanzen");
 
             string ersterName = "eins";
