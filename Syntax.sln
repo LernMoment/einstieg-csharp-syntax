@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhileSchleife", "WhileSchle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchlüsselwortStatic", "SchlüsselwortStatic\SchlüsselwortStatic.csproj", "{8674BC1A-1604-4575-978F-56C36EBA6A5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Methoden", "Methoden\Methoden.csproj", "{19774216-D2B6-4071-8E02-231E805DE55A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8674BC1A-1604-4575-978F-56C36EBA6A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8674BC1A-1604-4575-978F-56C36EBA6A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8674BC1A-1604-4575-978F-56C36EBA6A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19774216-D2B6-4071-8E02-231E805DE55A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19774216-D2B6-4071-8E02-231E805DE55A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19774216-D2B6-4071-8E02-231E805DE55A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19774216-D2B6-4071-8E02-231E805DE55A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
