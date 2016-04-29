@@ -6,6 +6,16 @@ namespace ForSchleife
     {
         static void Main(string[] args)
         {
+            // Beschreibung(); -> erklärt dir die Syntax, aber macht keine Ausgabe
+
+            FeldDurchlaufen();
+            TrennerAusgeben();
+
+            ZaehlerAusserhalbDerSchleifeDefinieren();
+            TrennerAusgeben();
+
+            Console.WriteLine("Zum beenden bitte RETURN drücken!");
+            Console.ReadLine();
         }
 
         static void Beschreibung()
@@ -91,6 +101,33 @@ namespace ForSchleife
 
             // ACHTUNG: i kann nach der Schleife in diesem Fall nicht benutzt werden, weil die Variable
             // nur innerhalb der Schleife definiert ist.
+        }
+
+        static void ZaehlerAusserhalbDerSchleifeDefinieren()
+        {
+            int zaehler = 10;
+
+            // Auch wenn zaehler bereits initialisiert wurde, kannst du ihn für die Schleife
+            // nochmals neu initialisieren (also eigentlich einfach nur einen anderen Wert 
+            // zuweisen)
+            for (zaehler = 0; zaehler < 10; zaehler++)
+            {
+                Console.WriteLine("Aktueller Wert des Zählers: {0}", zaehler);
+            }
+
+            // In diesem Fall kannst du nun zaehler auch nach der Schleife verwenden. Das ist
+            // hilfreich, wenn du den Wert des Zählers später noch brauchst.
+            // Bei der Verwendung musst du allerdings immer beachten wo du angefangen hast.
+            // In diesem Beispiel hat zaehler den Wert 9 nach der Schleife, aber da wir bei 0
+            // angefangen haben, wurde die Schleife insgesamt ausgeführt.
+            Console.WriteLine("Die Schleife wurde {0} mal ausgeführt.", zaehler + 1);
+        }
+
+        static void TrennerAusgeben()
+        {
+            Console.WriteLine();
+            Console.WriteLine("----------------------------");
+            Console.WriteLine();
         }
     }
 }
