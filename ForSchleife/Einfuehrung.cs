@@ -64,5 +64,33 @@ namespace ForSchleife
             // while-Schleife realisieren (z.B. "for(; dasIstBloed != false;)"). Dies ist allerdings nicht
             // empfehlenswert, weil die for-Schleife ganz klar zum zählen gedacht ist.
         }
+
+        static void FeldDurchlaufen()
+        {
+            // Die Grundidee für die for-Schleife kommt aus C/C++. Sie ist unter anderem sehr hilfreich
+            // um Elemente in einem Feld zu durchlaufen.
+            string[] feldMitVornamen = { "Heinz", "Hermine", "Hugo", "Helga" };
+
+            for (int i = 0; i < feldMitVornamen.Length; i++)
+            {
+                // WICHTIG: Der Index für ein Feld beginnt bei 0 und nicht bei 1!!!
+                // Daher wird der Zähler ("i") hier auf 0 initialisiert und die Bedingung
+                // lautet kleiner als die Anzahl an Elementen im Feld. Der Ausdruck
+                // "feldMitVornamen.Length" gibt in diesem Beispiel 4 zurück. Da wir aber auch das
+                // erste Element (in diesem Fall "Heinz") ausgeben wollen, muss der Zähler ("i")
+                // die Werte 0, 1, 2 und 3 annehmen, damit alle Elemente angesprochen werden.
+                // Würde i den Wert 4 annehmen (z.B. mit der Bedingung "i <= feldMitVornamen.Length"),
+                // gäbe es im 5. Durchlauf (i hat dann den Wert 4) einen Fehler, weil das Feld
+                // dieses Element nicht besitzt.
+
+                Console.WriteLine("Der {0}. Vorname ist: {1}", i, feldMitVornamen[i]);
+
+                // In diesem Beispiel wird erst der aktuelle Wert des Zählers ausgegeben und
+                // dann der Zähler verwendet um jedes Element in dem Feld "feldMitVornamen" auszugeben.
+            }
+
+            // ACHTUNG: i kann nach der Schleife in diesem Fall nicht benutzt werden, weil die Variable
+            // nur innerhalb der Schleife definiert ist.
+        }
     }
 }
