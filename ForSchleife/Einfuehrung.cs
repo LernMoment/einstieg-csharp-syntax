@@ -118,9 +118,13 @@ namespace ForSchleife
             // In diesem Fall kannst du nun zaehler auch nach der Schleife verwenden. Das ist
             // hilfreich, wenn du den Wert des Zählers später noch brauchst.
             // Bei der Verwendung musst du allerdings immer beachten wo du angefangen hast.
-            // In diesem Beispiel hat zaehler den Wert 9 nach der Schleife, aber da wir bei 0
-            // angefangen haben, wurde die Schleife insgesamt ausgeführt.
-            Console.WriteLine("Die Schleife wurde {0} mal ausgeführt.", zaehler + 1);
+            // Obwohl in diesem Beispiel der zaehler bei 0 gestartet ist, hat er nach der Schleife
+            // den Wert 10. Was den Verdacht nahe legt, dass die Schleife insgesamt 11 mal ausgeführt
+            // wurde. Dieses ist jedoch nicht der Fall, weil nach der 10. Iteration der zaehler
+            // nochmals inkrementiert wurde. Bei der darauf folgenden Überprüfung der Bedingung
+            // für die 11. Iteration wurde allerdings festgestellt, dass die Bedingung jetzt nicht
+            // mehr erfüllt ist und die Schleife wurde abgebrochen.
+            Console.WriteLine("Die Schleife wurde {0} mal ausgeführt.", zaehler);
         }
 
         static void TrennerAusgeben()
