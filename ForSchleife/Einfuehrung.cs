@@ -127,6 +127,34 @@ namespace ForSchleife
             Console.WriteLine("Die Schleife wurde {0} mal ausgeführt.", zaehler);
         }
 
+        static void Continue_AktuellenDurchlaufAbbrechen()
+        {
+            // Das Schlüsselwort CONTINUE kannst du verwenden, wenn du den Rest des 
+            // Schleifenrumpfs in dieser Iteration nicht durchlaufen willst.
+
+            string[] feldMitVornamen = { "Heinz", "Hermine", "Hugo", "Helga" };
+
+            for (int i = 0; i < feldMitVornamen.Length; i++)
+            {
+                // Wenn der Vorname Hugo ist, wollen wir den Rest dieser Iteration nicht mehr 
+                // ausführen.
+                // Dieser Vorname wird also nicht ausgegeben.
+                // Anstelle dessen wird sofort wieder in den Schleifenkopf gesprungen.
+                // Nach dem continue wird also der Zähler erhöht und dann die Bedingung
+                // wieder überprüft.
+
+                if (feldMitVornamen[i] == "Hugo")
+                {
+                    continue;
+                }
+
+                Console.WriteLine("Der {0}. Vorname ist: {1}", i, feldMitVornamen[i]);
+            }
+
+            // WICHTIG: continue bezieht sich nur auf die aktuelle Iteration! Es wird also
+            // nicht wie bei break die Schleife komplett verlassen!
+        }
+
         static void TrennerAusgeben()
         {
             Console.WriteLine();
