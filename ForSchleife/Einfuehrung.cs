@@ -136,7 +136,8 @@ namespace ForSchleife
 
             for (int i = 0; i < feldMitVornamen.Length; i++)
             {
-                // Wenn der Vorname Hugo ist, wollen wir den Rest nicht mehr ausführen.
+                // Wenn der Vorname Hugo ist, wollen wir den Rest dieser Iteration nicht mehr 
+                // ausführen.
                 // Dieser Vorname wird also nicht ausgegeben.
                 // Anstelle dessen wird sofort wieder in den Schleifenkopf gesprungen.
                 // Nach dem continue wird also der Zähler erhöht und dann die Bedingung
