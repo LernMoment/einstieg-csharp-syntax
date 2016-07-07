@@ -56,6 +56,8 @@ namespace Enums
                 Console.WriteLine("Weisheit des Tages: Du vergiftest deinen Körper!");
             }
 
+            AutomarkenBeispiel.Ausfuehren();
+
             Console.ReadLine();
         }
     }

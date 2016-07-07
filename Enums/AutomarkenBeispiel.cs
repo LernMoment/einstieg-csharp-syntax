@@ -2,6 +2,11 @@
 
 namespace Enums
 {
+    public enum AutoMarke
+    {
+        porsche,
+        audi
+    }
 
     public class AutomarkenBeispiel
     {
@@ -10,19 +15,23 @@ namespace Enums
 
         public static void Ausfuehren()
         {
-            GibAutoMarkeAus(porsche);
+            AutoMarke meinAuto = AutoMarke.audi;
+
+            GibAutoMarkeAus(meinAuto);
+
+            Console.WriteLine("Die Marke meines Autos: " + meinAuto.ToString());
         }
 
-        private static void GibAutoMarkeAus(int marke)
+        private static void GibAutoMarkeAus(AutoMarke marke)
         {
             string ausgabe;
 
             switch (marke)
             {
-                case porsche:
+                case AutoMarke.porsche:
                     ausgabe = "Du fährst ein Auto der Marke: Porsche";
                     break;
-                case audi:
+                case AutoMarke.audi:
                     ausgabe = "Du fährst ein Auto der Marke: Audi";
                     break;
                 default:
