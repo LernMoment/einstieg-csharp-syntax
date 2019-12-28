@@ -42,6 +42,27 @@ namespace ZweiDimensionalesArray
             }
 
             Console.WriteLine();
+            Console.WriteLine("Ein zweidimensionales Array ist ein Array von Arrays:");
+            // Du suchst also im Array über den ersten Index eines der darin gespeicherten Arrays aus.
+            // In diesem Beispiel haben wir ein Array von 3 Arrays. Möchtest du auf das mittlere Array
+            // zugreifen geht das so:
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write("Bitte gib eine Zahl ein: ");
+                tabelle[1, i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Das Array sieht nach deiner Änderung nun so aus:");
+            for (int spaltenIndex = 0; spaltenIndex < 3; spaltenIndex++)
+            {
+                for (int zeilenIndex = 0; zeilenIndex < 3; zeilenIndex++)
+                {
+                    Console.WriteLine($"Spalte: {spaltenIndex}, Zeile: {zeilenIndex}, Inhalt: {tabelle[spaltenIndex, zeilenIndex]}");
+                }
+            }
+
+            Console.WriteLine();
             Console.WriteLine("Zum beenden bitte RETURN drücken!");
             Console.ReadLine();
         }
