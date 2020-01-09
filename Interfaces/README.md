@@ -9,4 +9,5 @@ Zukünftig werden sicherlich Videos von mir zu diesem Thema folgen, aber ich mac
 ### Weitere Quellen zum Thema:
 
 [Eigenes Interface anlegen und verwenden](https://tuts4you.de/87-programmieren/csharp/160-c-vorteil-und-verwendung-von-interfaces) - anschauliche Einführung mit ein wenig Begründung warum Interface eingesetzt werden sollten.
+
 [Unterschied zwischen struct, class, abstract class und interface](https://youtu.be/DO3chZEZNfw) - Bei [15:41](https://youtu.be/DO3chZEZNfw?t=941) geht es los mit `Interface`.
