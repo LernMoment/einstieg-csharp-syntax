@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enums", "Enums\Enums.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZweiDimensionalesArray", "ZweiDimensionalesArray\ZweiDimensionalesArray.csproj", "{CF2A3A47-6087-42E6-86FD-B8156E319798}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{FF2735F5-42EE-420F-9F9E-9A88E1B8B93D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{CF2A3A47-6087-42E6-86FD-B8156E319798}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF2A3A47-6087-42E6-86FD-B8156E319798}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF2A3A47-6087-42E6-86FD-B8156E319798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF2735F5-42EE-420F-9F9E-9A88E1B8B93D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF2735F5-42EE-420F-9F9E-9A88E1B8B93D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF2735F5-42EE-420F-9F9E-9A88E1B8B93D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF2735F5-42EE-420F-9F9E-9A88E1B8B93D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
